@@ -31,6 +31,6 @@ CREATE OR REPLACE FILE FORMAT load_data.public.file_format_cli
 COPY INTO load_data.public.sample_orders_cli
 FROM (SELECT $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16
 	FROM @snowflake_cli_stage)
-FILES = ('sample_orders.csv') 
+FILES = ('csv/sample_orders.csv') 
 FILE_FORMAT = ( FORMAT_NAME='load_data.public.file_format_cli')
 ON_ERROR=ABORT_STATEMENT 
