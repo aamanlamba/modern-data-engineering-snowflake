@@ -4,7 +4,7 @@ USE DATABASE tasty_bytes;
 
 CREATE OR REPLACE DYNAMIC TABLE tasty_bytes.raw_pos.daily_sales_hamburg
 WAREHOUSE = 'COMPUTE_WH'
-TARGET_LAG =  
+TARGET_LAG =  '1 minute'
 AS
 SELECT
     CAST(oh.ORDER_TS AS DATE) AS date,
